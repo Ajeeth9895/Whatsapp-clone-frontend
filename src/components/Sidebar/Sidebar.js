@@ -25,8 +25,8 @@ const Sidebar = () => {
 
   //If a server wants to push new data to clients, they can do it instantly using Pusher.
   useEffect(() => {
-    var pusher = new Pusher('f0d22a2648acb2d53b94', {
-      cluster: 'ap2'
+    var pusher = new Pusher(process.env.REACT_APP_num, {
+      cluster: process.env.REACT_APP_cluster
     });
 
     const channel = pusher.subscribe("room");

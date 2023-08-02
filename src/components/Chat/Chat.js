@@ -59,8 +59,8 @@ const Chat = () => {
   };
 
   useEffect(() => {
-    var pusher = new Pusher('f0d22a2648acb2d53b94', {
-      cluster: 'ap2'
+    var pusher = new Pusher(process.env.REACT_APP_num, {
+      cluster: process.env.REACT_APP_cluster
     });
 
     const channel = pusher.subscribe("messages");

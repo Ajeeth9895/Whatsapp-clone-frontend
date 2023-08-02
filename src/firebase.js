@@ -2,12 +2,12 @@ import { initializeApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBiNIHaYubmA79GRZARzULXh4m_SmkClt0",
-  authDomain: "whatsappclone-9d6eb.firebaseapp.com",
-  projectId: "whatsappclone-9d6eb",
-  storageBucket: "whatsappclone-9d6eb.appspot.com",
-  messagingSenderId: "766336588270",
-  appId: "1:766336588270:web:9685a60000fc2b5cc716ff"
+  apiKey: process.env.REACT_APP_apiKey,
+  authDomain: process.env.REACT_APP_authDomain,
+  projectId: process.env.REACT_APP_projectId,
+  storageBucket: process.env.REACT_APP_storageBucket,
+  messagingSenderId: process.env.REACT_APP_messagingSenderId,
+  appId: process.env.REACT_APP_appId
 };
 
 //to use firebase services in application

@@ -5,7 +5,7 @@ import { auth, provider } from "../../firebase";
 import { useStateValue } from "../ContextApi/StateProvider";
 import { actionTypes } from "../ContextApi/reducer";
 import { signInWithPopup } from "firebase/auth";
-import { GoogleLogin } from 'react-google-login';
+
 
 const Login = () => {
   const [state, dispatch] = useStateValue();

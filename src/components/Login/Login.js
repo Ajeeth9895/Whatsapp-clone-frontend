@@ -11,26 +11,20 @@ const Login = () => {
   const [state, dispatch] = useStateValue();
 
   //to open a pop up sign in with google account
-  // const signIn = () => {
-  //   signInWithPopup(auth, provider)
-  //     .then((result) => {
-  //       dispatch({
-  //         type: actionTypes.SET_USER,
-  //         user: result.user,
-  //       });
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //       alert(err.message);
-  //     });
-  // };
+  const signIn = () => {
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        dispatch({
+          type: actionTypes.SET_USER,
+          user: result.user,
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+        alert(err.message);
+      });
+  };
 
-  const responseGoogle = (response) => {
-    dispatch({
-      type: actionTypes.SET_USER,
-      user: response.user,
-    });
-  }
 
   return (
     // Login page
@@ -43,16 +37,10 @@ const Login = () => {
         <div className="login__text">
           <h1>Sign in to WhatsApp</h1>
         </div>
-        {/* <Button type="submit" onClick={signIn}>
+        <Button type="submit" onClick={signIn}>
           Sign In With Google
-        </Button> */}
-        <GoogleLogin
-          clientId="603709256937-ujep62d7m9g4capksnvmoag2nklq3gj5.apps.googleusercontent.com"
-          buttonText="Login"
-          onSuccess={responseGoogle}
-          onFailure={responseGoogle}
-          cookiePolicy={'single_host_origin'}
-        />
+        </Button>
+
       </div>
     </div>
   );
